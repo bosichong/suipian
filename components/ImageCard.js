@@ -5,7 +5,7 @@ import Link from 'next/link';
 const ImageCard = ({ image }) => {
   return (
     <Link href={`/images/${image.id}`}>
-      <div className="relative group hover:shadow-lg hover:shadow-pink-950">
+      <div className="relative rounded-lg group hover:shadow-lg hover:shadow-orange-950">
         <Image src={`/images/${image.src}`} alt={image.alt} width={image.width} height={image.height} className="w-full h-auto rounded-lg"/>
         <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           <p className='text-gray-400 text-center'>{image.alt}</p>
