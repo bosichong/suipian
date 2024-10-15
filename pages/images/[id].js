@@ -6,18 +6,31 @@ const ImageDetail = ({ image }) => {
   return (
     <><Head>
       <title>SuiPian - {image.alt}</title>
-     <meta content={image.tags} name="keywords" />
+      <meta content={image.tags} name="keywords" />
       <meta content={image.description} name="description" />
 
-    <meta content="J.sky" name="author" />
+      <meta content="J.sky" name="author" />
     </Head>
-    <div className="container px-4">
-        <div className="flex justify-center">
-          <Image src={`/images/${image.src}`} alt={image.alt} width={image.width / 5} height={image.height / 5} className="" />
+      <div className="container mx-auto px-4">
+        <div className='flex items-stretch m-4'>
+          <h1 className="text-3xl">{image.alt}</h1>
+          <tag className="self-end ml-2">[{image.source}]</tag>
         </div>
-        <div>
-          <div className="flex justify-center">{image.alt}</div>
-          <div className="flex justify-center">{image.description}</div>
+
+        <div className="flex justify-center">
+          <Image src={`/images/${image.src}`} alt={image.alt} width={image.width / 2} height={image.height / 2} className="" />
+        </div>
+        <div className='m-4 p-4'>
+          <div className='text-center'>{image.description}</div>
+        </div>
+        <div className='m-4 p-4'>
+          <ul className='flex flex-wrap'>
+            {image.tags.map((tag, index) => (
+              <li key={index} className='mr-3 hover:animate-bounce'>
+                <a href={`/tags/${tag}`} className="p-1 border border-gray-600 transition hover:border-orange-600">{tag}</a>
+              </li>
+            ))}
+          </ul>
         </div>
 
       </div></>

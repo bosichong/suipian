@@ -37,12 +37,12 @@ body {
 .my-masonry-grid {
   display: flex;
   flex-wrap: wrap;
-  margin: -8px; /* 负的外边距来抵消内边距 */
+  margin: -16px; /* 负的外边距来抵消内边距 */
 }
 
 .masonry-item {
   flex: 1 0 200px; /* 每个项的最小宽度为200px */
-  margin: 8px;
+  margin: 16px;
   box-sizing: border-box;
 }
 
