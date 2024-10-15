@@ -7,6 +7,8 @@ const TagsPage = ({ tags }) => {
   return (
     <><Head>
       <title>SuiPian - Tags</title>
+      <meta content="壁纸分类,标签集合" name="keywords" />
+      <meta content="SuiPian | 壁纸分类、标签集合" name="description" />
     </Head>
     <div className="container mx-auto px-4">
         <h1 className='text-3xl mb-3'>Tags</h1>

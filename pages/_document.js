@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import SiteNav from '@/components/siteNav';
+import Footer from '@/components/footer';
 
 export default function Document() {
   return (
@@ -8,6 +9,7 @@ export default function Document() {
       <body className="antialiased">
         <SiteNav />
         <Main />
+        <Footer />
         <NextScript />
       </body>
     </Html>

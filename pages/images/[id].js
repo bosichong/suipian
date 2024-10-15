@@ -6,7 +6,12 @@ const ImageDetail = ({ image }) => {
   return (
     <><Head>
       <title>SuiPian - {image.alt}</title>
-    </Head><div className="container px-4">
+     <meta content={image.tags} name="keywords" />
+      <meta content={image.description} name="description" />
+
+    <meta content="J.sky" name="author" />
+    </Head>
+    <div className="container px-4">
         <div className="flex justify-center">
           <Image src={`/images/${image.src}`} alt={image.alt} width={image.width / 5} height={image.height / 5} className="" />
         </div>

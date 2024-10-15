@@ -22,6 +22,8 @@ const TagPage = ({ tag, images }) => {
   return (
     <><Head>
       <title>SuiPian - {tag} </title>
+      <meta content={tag} name="keywords" />
+      <meta content={tag + "分类下的图片"} name="description" />
     </Head>
     <div className="container mx-auto px-4">
         <Masonry
