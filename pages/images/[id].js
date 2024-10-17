@@ -12,16 +12,17 @@ const ImageDetail = ({ image }) => {
       <meta content="J.sky" name="author" />
     </Head>
       <div className="container mx-auto px-4">
-        <div className='flex items-stretch m-4'>
-          <h1 className="text-3xl">{image.alt}</h1>
-          <tag className="self-end ml-2">[{image.source}]</tag>
+        <div className='flex flex-wrap items-stretch m-4'>
+          <h1 className="text-xl">{image.alt}</h1>
+          <tag className="self-end ml-2 text-xs text-gray-400">[{image.source}]</tag>
         </div>
 
         <div className="flex justify-center">
           <Image src={`/images/${image.src}`} alt={image.alt} width={image.width / 2} height={image.height / 2} className="" />
         </div>
-        <div className='m-4 p-4'>
+        <div className='m-4'>
           <div className='text-center'>{image.description}</div>
+          
         </div>
         <div className='m-4 p-4'>
           <ul className='flex flex-wrap'>
@@ -31,6 +32,9 @@ const ImageDetail = ({ image }) => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className='m-4 p-4'>
+        <p>上传时间：{image.time}</p>
         </div>
 
       </div></>
