@@ -5,7 +5,7 @@ const SiteNav = ({siteDate}) =>{
       <div class="container h-16 xl:w-3/5 mx-auto flex items-center">
         <div class="justify-start w-1/5">
           <div class="w-16 text-center text-2xl hover:animate-bounce">
-            <a href="/" class="text-gray-300 transition hover:text-orange-500">SuiPian</a>
+            <a href="/" class="text-gray-300 transition hover:text-orange-500">碎片</a>
           </div>
         </div>
         <div class="justify-end w-4/5 flex">
