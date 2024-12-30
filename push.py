@@ -14,6 +14,7 @@ def git_push():
             time.sleep(5)
 
 def main():
+    subprocess.check_call(['node', 'gs.js'])
     subprocess.check_call(['git', 'add', '.'])
     subprocess.check_call(['git', 'commit', '-m', '更新'])
     git_push()
