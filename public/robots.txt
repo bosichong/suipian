@@ -2,8 +2,3 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.suipian.cc
-
-# Sitemaps
-Sitemap: https://www.suipian.cc/sitemap.xml
