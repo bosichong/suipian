@@ -3,6 +3,7 @@ const path = require('path');
 
 // 假设你的 JSON 文件位于项目根目录下的 'public/images' 文件夹中
 const dataFilePath = path.join(process.cwd(), 'public', 'images', 'data.json');
+const publicDir = path.join(process.cwd(), 'public');
 
 function getSortedImageData() {
     const fileContent = fs.readFileSync(dataFilePath, 'utf8');
@@ -57,12 +58,26 @@ function generateSitemap() {
         <priority>${image.priority}</priority>
     </url>`).join('')}</urlset>`;
 
-    // 保存 sitemap.xml 到 public 目录下
-    const publicDir = path.join(process.cwd(), 'public');
-    const sitemapPath = path.join(publicDir, 'sitemap.xml');
-    fs.writeFileSync(sitemapPath, xmlContent);
+// 保存 sitemap_images.xml
+const sitemapBlogsPath = path.join(publicDir, 'sitemap_images.xml');
+fs.writeFileSync(sitemapBlogsPath, xmlContent);
 
-    console.log('Sitemap generated successfully!');
+// 生成 sitemap.xml 索引文件
+const sitemapIndexPath = path.join(publicDir, 'sitemap.xml');
+const now = new Date().toISOString(); // 获取当前时间
+
+const sitemapIndexContent = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+    <loc>https://www.suipian.cc/sitemap_images.xml</loc>
+    <lastmod>${now}</lastmod>
+</sitemap>
+</sitemapindex>
+`;
+fs.writeFileSync(sitemapIndexPath, sitemapIndexContent);
+
+
+console.log('Sitemap and sitemap index generated successfully!');
 }
 
 generateSitemap();
